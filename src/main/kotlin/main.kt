@@ -1,9 +1,24 @@
 fun main (){
-    val minhaFuncao : () -> Unit = ::teste
-    minhaFuncao()
+    val minhaFuncaoLambda  = {
+        println("Executa como lambda")
+    }
 
-    val minhaFuncaoClasse : () -> Unit  = Teste()
+    println(minhaFuncaoLambda)
+
+    val minhaFuncaoAnonima :() -> Unit = fun (){
+        println("Executa funcao anonima")
+    }
+
+}
+
+fun testaTipoReferenciaClasse() {
+    val minhaFuncaoClasse: () -> Unit = Teste()
     println(minhaFuncaoClasse())
+}
+
+fun testaTipoReferencia() {
+    val minhaFuncao: () -> Unit = ::teste
+    minhaFuncao()
 }
 
 fun teste(){
